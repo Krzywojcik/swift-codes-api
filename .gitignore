@@ -9,8 +9,5 @@ env/
 ENV/
 .venv/
 .idea/
-*.xlsx
-*.xls
 .DS_Store
-Thumbs.db
 *.log

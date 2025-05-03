@@ -19,7 +19,9 @@ pip install -r requirements.txt
 
 To load SWIFT codes from the Excel file:
 
+```
 python load_data.py
+```
 
 Make sure the file "Interns_2025_SWIFT_CODES.xlsx" is in the root folder of the project.
 

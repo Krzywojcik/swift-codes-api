@@ -33,15 +33,23 @@ Make sure the file "Interns_2025_SWIFT_CODES.xlsx" is in the root folder of the 
 ## Endpoints
 
 -POST /v1/swift-codes
+
+
  Add a new SWIFT code
 
 -GET /v1/swift-codes/{swift_code}
+
+
  Get details of a specific SWIFT code
 
 -GET /v1/swift-codes/country/{countryISO2}
+
+
  Get all SWIFT codes for a specific country
 
 -DELETE /v1/swift-codes/{swift_code}
+
+
  Delete a SWIFT code
 
 # Program is ready

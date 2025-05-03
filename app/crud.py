@@ -19,6 +19,7 @@ def get_swift_code(db: Session, code: str):
     return main, []
 
 
+
 def delete_swift_code(db: Session, code: str):
     db_code = db.query(models.SwiftCode).filter(models.SwiftCode.swiftCode == code).first()
     if db_code:

@@ -11,12 +11,14 @@ def create_swift_code(db: Session, code: schemas.SwiftCodeCreate):
 def get_swift_code(db: Session, code: str):
     main = db.query(models.SwiftCode).filter(models.SwiftCode.swiftCode == code).first()
     if main and main.isHeadquarter:
+        prefix = main.swiftCode[:8].upper()
         branches = db.query(models.SwiftCode).filter(
-    models.SwiftCode.swiftCode != main.swiftCode,
-    models.SwiftCode.swiftCode.ilike(f"{main.swiftCode[:8]}%")
-).all()
+            models.SwiftCode.swiftCode != main.swiftCode,
+            models.SwiftCode.swiftCode.ilike(f"{prefix}%")
+        ).all()
         return main, branches
     return main, []
+
 
 
 

@@ -26,7 +26,10 @@ python load_data.py
 Make sure the file "Interns_2025_SWIFT_CODES.xlsx" is in the root folder of the project.
 
 3. Start the server:
+
+```
 python -m uvicorn app.main:app --reload --port 8080
+```
 
 4. Open docs:
 ```

@@ -16,12 +16,15 @@ def get_db():
         db.close()
 
 
-@app.get("/v1/swift-codes/{swift_code}", response_model=schemas.SwiftCodeResponse)
+@app.get("/v1/swift-codes/{swift_code}", response_model=schemas.SwiftCodeWithBranches)
 def get_code(swift_code: str, db: Session = Depends(get_db)):
-    code = crud.get_swift_code(db, swift_code)
-    if not code:
+    main, branches = crud.get_swift_code(db, swift_code)
+    if not main:
         raise HTTPException(status_code=404, detail="Not found")
-    return code
+
+    response = schemas.SwiftCodeWithBranches(**main.__dict__)
+    response.branches = [schemas.SwiftCodeBranch(**b.__dict__) for b in branches]
+    return response
 
 
 @app.get("/v1/swift-codes/country/{country_code}", response_model=List[schemas.SwiftCodeResponse])

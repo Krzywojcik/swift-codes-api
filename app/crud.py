@@ -9,7 +9,15 @@ def create_swift_code(db: Session, code: schemas.SwiftCodeCreate):
     return db_code
 
 def get_swift_code(db: Session, code: str):
-    return db.query(models.SwiftCode).filter(models.SwiftCode.swiftCode == code).first()
+    main = db.query(models.SwiftCode).filter(models.SwiftCode.swiftCode == code).first()
+    if main and main.isHeadquarter:
+        branches = db.query(models.SwiftCode).filter(
+            models.SwiftCode.swiftCode != main.swiftCode,
+            models.SwiftCode.swiftCode.startswith(main.swiftCode[:8])
+        ).all()
+        return main, branches
+    return main, []
+
 
 def delete_swift_code(db: Session, code: str):
     db_code = db.query(models.SwiftCode).filter(models.SwiftCode.swiftCode == code).first()

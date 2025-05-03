@@ -12,9 +12,9 @@ def get_swift_code(db: Session, code: str):
     main = db.query(models.SwiftCode).filter(models.SwiftCode.swiftCode == code).first()
     if main and main.isHeadquarter:
         branches = db.query(models.SwiftCode).filter(
-            models.SwiftCode.swiftCode != main.swiftCode,
-            models.SwiftCode.swiftCode.startswith(main.swiftCode[:8])
-        ).all()
+    models.SwiftCode.swiftCode != main.swiftCode,
+    models.SwiftCode.swiftCode.ilike(f"{main.swiftCode[:8]}%")
+).all()
         return main, branches
     return main, []
 

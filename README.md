@@ -1,14 +1,16 @@
-SWIFT Codes API
+# SWIFT Codes API
+***Remitly Interns Project***
+## Project Description
 
 REST API for parsing, storing, and accessing SWIFT bank codes from an Excel file.
 
-✅ Tech stack
+## Tech stack
 - Python 3.9
 - FastAPI
 - SQLite (via SQLAlchemy)
 - Pandas + Openpyxl
 
-▶️ How to run
+## ️ How to run
 
 1. Install dependencies:
 pip install -r requirements.txt
@@ -19,7 +21,7 @@ python -m uvicorn app.main:app --reload --port 8080
 3. Open docs:
 http://localhost:8080/docs
 
-📄 Import Excel data
+## Import Excel data
 
 To load SWIFT codes from the Excel file:
 
@@ -27,7 +29,7 @@ python load_data.py
 
 Make sure the file "Interns_2025_SWIFT_CODES.xlsx" is in the root folder of the project.
 
-📌 Endpoints
+## Endpoints
 
 POST /v1/swift-codes
 – Add a new SWIFT code
@@ -41,5 +43,5 @@ GET /v1/swift-codes/country/{countryISO2}
 DELETE /v1/swift-codes/{swift_code}
 – Delete a SWIFT code
 
-🚀 Ready to test!
+# Program is ready
 Open Swagger UI in your browser: http://localhost:8080/docs

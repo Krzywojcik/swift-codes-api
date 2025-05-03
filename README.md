@@ -1,4 +1,4 @@
-# SWIFT Codes API
+# **SWIFT Codes API**
 ***Remitly Interns Project***
 ## Project Description
 
@@ -19,8 +19,9 @@ pip install -r requirements.txt
 python -m uvicorn app.main:app --reload --port 8080
 
 3. Open docs:
+```
 http://localhost:8080/docs
-
+```
 ## Import Excel data
 
 To load SWIFT codes from the Excel file:
@@ -31,17 +32,20 @@ Make sure the file "Interns_2025_SWIFT_CODES.xlsx" is in the root folder of the 
 
 ## Endpoints
 
-POST /v1/swift-codes
-– Add a new SWIFT code
+-POST /v1/swift-codes
+ Add a new SWIFT code
 
-GET /v1/swift-codes/{swift_code}
-– Get details of a specific SWIFT code
+-GET /v1/swift-codes/{swift_code}
+ Get details of a specific SWIFT code
 
-GET /v1/swift-codes/country/{countryISO2}
-– Get all SWIFT codes for a specific country
+-GET /v1/swift-codes/country/{countryISO2}
+ Get all SWIFT codes for a specific country
 
-DELETE /v1/swift-codes/{swift_code}
-– Delete a SWIFT code
+-DELETE /v1/swift-codes/{swift_code}
+ Delete a SWIFT code
 
 # Program is ready
-Open Swagger UI in your browser: http://localhost:8080/docs
+Open Swagger UI in your browser:
+```
+ http://localhost:8080/docs
+```

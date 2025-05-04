@@ -13,7 +13,10 @@ REST API for parsing, storing, and accessing SWIFT bank codes from an Excel file
 ## ️ How to run
 
 1. Install dependencies:
-pip install -r requirements.txt
+
+```
+pip install fastapi uvicorn sqlalchemy pydantic openpyxl pandas
+```
 
 2. Import Excel data
 

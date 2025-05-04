@@ -1,5 +1,13 @@
+
+ #Module name:   schemas
+ #Author:        Krzysztof Wójcik
+ #Last modified: 2025-05-03
+ #Description:   Class implementations
+
+
 from typing import List, Optional
 from pydantic import BaseModel
+
 
 class SwiftCodeBase(BaseModel):
     address: str

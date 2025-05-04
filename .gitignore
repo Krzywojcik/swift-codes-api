@@ -1,3 +1,7 @@
+ #Module name:   gitignore
+ #Author:        Krzysztof Wójcik
+ #Last modified: 2025-05-03
+ #Description: files ignored in the Git repository
 __pycache__/
 *.pyc
 *.pyo
